@@ -6,7 +6,7 @@ plotTimeSeriesTransaction <-
            amount_field,
            xlim,
            cr_db_field) {
-    ggplot(transaction_by_day,
+    g <- ggplot(transaction_by_day,
            aes(x = date_field, y = amount_field)) +
       geom_col(position = "identity", aes(fill = get(cr_db_field))) +
       geom_col(position = "identity", width = 1) + theme_minimal() +
